@@ -1,0 +1,26 @@
+body {
+    border: 2px solid lightblue;
+    width: 25%;
+    padding: 10px;
+}
+
+img {
+    width: 200px;
+}
+
+.lien {
+    border-bottom: 1px solid black;
+}
+
+.elements {
+    border-bottom: 1px solid black;
+}
+
+.prog {
+    border-bottom: 1px solid black;
+}
+
+.barre progress {
+    color: green;
+    border-radius: 5px;
+}

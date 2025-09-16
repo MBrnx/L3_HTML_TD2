@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>L3_HTML_TD2</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div class="lien">
+            <h1>Lien et images</h1>
+            <a href="https://www.wikipedia.org">La page principale de Wikipedia</a>
+
+            <p><img src="images/logo_google.png" alt="Logo de Google"></p>
+        </div>
+
+        <div class="elements">
+            <h1>Des &eacute;l&eacute;ments !</h1>
+            <label for="premier"></label>
+            <input type="text" id="premier" name="premier" placeholder="Premiers pas avec Javascript">
+            
+            <p>
+                <input type="radio" id="choix1" name="choix" value="choix1"> Choix N°1
+                <input type="radio" id="choix2" name="choix" value="choix2"> Choix N°2
+                <input type="radio" id="choix3" name="choix" value="choix3"> Choix N°3
+            </p>
+
+            <p><input type="password" id="mdp" name="mdp" placeholder="Mot de passe"/></p>
+
+            <p>0<input type="range" id="volume" name="volume" min="0" max="100"/>Volume</p>
+            
+            <p>Une case &agrave; cocher <input type="checkbox"> </p>
+
+            <p>Date : <input type="date"/></p>
+
+            <p><button type="button">OK</button></p>
+
+
+        </div>
+
+        <div class="prog">
+            <h1>Barres de progression</h1>
+            <p>T&eacute;l&eacute;chargement en cours : <progress value="50" max="100"></progress></p>
+            <p>
+               <div class="barre"> 
+                Espace disponible : <progress value="50" max="100" id="espace"></progress></p>
+                </div>
+                
+        </div>
+
+
+    </body>
+
+</html>
