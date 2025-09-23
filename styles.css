@@ -20,7 +20,18 @@ img {
     border-bottom: 1px solid black;
 }
 
-.barre progress {
-    color: green;
+.barre progress[value] {
+    appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.barre progress[value]::-webkit-progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+}
+
+.barre progress[value]::-webkit-progress-value {
+    background-color: #4caf50; 
     border-radius: 5px;
 }
