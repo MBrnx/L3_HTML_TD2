@@ -18,20 +18,24 @@ img {
 
 .prog {
     border-bottom: 1px solid black;
+    padding-bottom: 10px;
 }
 
-.barre progress[value] {
+.dispo progress[value] {
     appearance: none;
     -webkit-appearance: none;
     appearance: none;
 }
 
-.barre progress[value]::-webkit-progress-bar {
+.dispo progress[value]::-webkit-progress-bar {
     background-color: #e0e0e0;
-    border-radius: 5px;
+    border-radius: 10px;
+    height: 13px;
+    width: 75px;
+    border: 1px solid black;
 }
 
-.barre progress[value]::-webkit-progress-value {
+.dispo progress[value]::-webkit-progress-value {
     background-color: #4caf50; 
-    border-radius: 5px;
+    border-radius: 10px 0px 0px 10px;
 }

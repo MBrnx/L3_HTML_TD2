@@ -9,7 +9,7 @@
     <body>
         <div class="lien">
             <h1>Lien et images</h1>
-            <a href="https://www.wikipedia.org">La page principale de Wikipedia</a>
+            <a id="wiki" href="https://www.wikipedia.org" target="_blank">La page principale de Wikipedia</a>
 
             <p><img src="images/logo_google.png" alt="Logo de Google"></p>
         </div>
@@ -31,7 +31,8 @@
             
             <p>Une case &agrave; cocher <input type="checkbox"> </p>
 
-            <p>Date : <input type="date"/></p>
+            <p><label for="date">Date : </label>
+                <input type="date" id="date" name="date"></p>
 
             <p><button type="button">OK</button></p>
 
@@ -40,16 +41,18 @@
 
         <div class="prog">
             <h1>Barres de progression</h1>
-            <p>T&eacute;l&eacute;chargement en cours : <progress value="50" max="100"></progress></p>
-            <p>
-                <div class="barre"> 
+
+                <div class="telechargement">
+                    T&eacute;l&eacute;chargement en cours : <progress value="50" max="100"></progress>
+                </div>
+
+                <div class="dispo"> 
                     Espace disponible : <progress value="50" max="100" id="espace"></progress>
                 </div>
-            </p>
                 
         </div>
 
-
+        <script src="script.js"></script>
     </body>
 
 </html>
