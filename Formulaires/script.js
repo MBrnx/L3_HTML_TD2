@@ -84,7 +84,8 @@ const label = document.querySelector("label[for='ouinon']");
 checkbox.addEventListener('change', function() {
     if (checkbox.checked) {
         label.textContent = "Mute";
-    } else {
+    } 
+    else {
         label.textContent = "Une case à cocher";
     }
 });
@@ -93,6 +94,82 @@ checkbox.addEventListener('change', function() {
 Un appui sur la case à cocher à droite de « Mute », désactive ou réactive le volume.
 Aide : utilisez les attributs disabled et checked
 */
-document.getElementById('desactiver').addEventListener('change', function() {
+const muteCheckbox = document.getElementById('ouinon');
+muteCheckbox.addEventListener('change', function() {
     volumeInput.disabled = this.checked;
+});
+
+/*
+Ajoutez à la fin de la section Lien et images une image.
+(src avec par exemple https://upload.wikimedia.org/wikipedia/commons/b/bd/UPHF_logo.svg ),
+la largeur (200), rechercher l’élément div Lien et images puis insérer un nœud avec appendChild
+*/
+const lienImagesDiv = document.querySelector('.lien');
+const newImage = document.createElement('img');
+newImage.src = 'https://upload.wikimedia.org/wikipedia/commons/b/bd/UPHF_logo.svg';
+newImage.width = 200;
+lienImagesDiv.appendChild(newImage);
+
+/*
+Au démarrage, tout est caché sauf le menu.
+Aide : posez-vous ces questions :
+- Quel est l’événement qui se déclenche lorsque la page est chargée ?
+- Quel est l’élément sur lequel se déclenche cette événement ?
+- Comment désactiver l’affichage (https://www.w3schools.com/css/css_display_visibility.asp )
+- Comment utiliser une boucle for (https://www.w3schools.com/js/js_loop_for.asp )
+C’est grâce à ce menu, que l’utilisateur va choisir la ou les partie(s) il voudrait afficher.
+Coder ce comportement en JS.
+Aide : https://www.w3schools.com/howto/howto_js_display_checkbox_text.asp
+Il faut peut-être utiliser this qui va renvoyer l’élément sur lequel se déclenche l’événement
+Technologie du Web
+Javascript
+(demander au professeur si besoin)
+Si vous rechargez la page mais que vous avez coché précédemment des cases sont toujours
+présentes.
+Modifiez le callback du démarrage afin qu’aucun choix soit sélectionné. 
+*/
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('.lien, .elements, .prog');
+    sections.forEach(function(section) {
+        section.style.display = 'none';
+    });
+
+    const menuCheckboxes = document.querySelectorAll('.menu-checkbox');
+    menuCheckboxes.forEach(function(checkbox) {
+        checkbox.checked = false;
+    });
+
+    menuCheckboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            const sectionClass = this.getAttribute('data-section');
+            const section = document.querySelector('.' + sectionClass);
+            if (this.checked) {
+                section.style.display = '';
+            } else {
+                section.style.display = 'none';
+            }
+        });
+    });
+});
+
+/*
+Récupérer l’année choisie de :<input type="date" et l’afficher dans la console
+*/
+const dateInput = document.getElementById('date');
+dateInput.addEventListener('change', function() {
+    const selectedYear = new Date(this.value).getFullYear();
+    console.log("Année choisie : " + selectedYear);
+});
+
+/*
+Les deux barres de progression partent de zéro et progressent de 5% toutes les secondes.
+*/
+const progressBars = document.querySelectorAll('progress');
+progressBars.forEach(function(progressBar) {
+    progressBar.value = 0;
+    setInterval(function() {
+        if (progressBar.value < 100) {
+            progressBar.value += 5;
+        }
+    }, 1000);
 });
