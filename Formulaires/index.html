@@ -7,6 +7,14 @@
     </head>
 
     <body>
+
+        <div id="menu">
+            <label><input type="checkbox" class="menu-checkbox" data-section="lien"> Lien et images</label>
+            <label><input type="checkbox" class="menu-checkbox" data-section="elements"> Éléments</label>
+            <label><input type="checkbox" class="menu-checkbox" data-section="prog"> Barres de progression</label>
+        </div>
+
+
         <div class="lien">
             <h1>Lien et images</h1>
             <a id="wiki" href="https://www.wikipedia.org" target="_blank">La page principale de Wikipedia</a>
@@ -27,14 +35,23 @@
 
             <p><input type="password" id="mdp" name="mdp" placeholder="Mot de passe"/></p>
 
-            <p>0<input type="range" id="volume" name="volume" min="0" max="100"/>Volume</p>
-            
-            <p>Une case &agrave; cocher <input type="checkbox"> </p>
+            <p>
+                0
+                <input type="range" id="volume" name="volume" min="0" max="100"/>
+                Volume 
+                <span id="valeur-volume"></span>
+            </p>
+
+            <p>
+                <label for="ouinon">Une case &agrave; cocher</label>
+                <input type="checkbox" id="ouinon">
+            </p>
 
             <p><label for="date">Date : </label>
                 <input type="date" id="date" name="date"></p>
 
-            <p><button type="button">OK</button></p>
+            <p><input id="btn" type="button" value="Ok"></p>
+            
 
 
         </div>
